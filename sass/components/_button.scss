@@ -1,5 +1,4 @@
 .btn {
-  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -10,8 +9,6 @@
     transition: all 0.2s;
     position: relative;
     font-size: $default-font-size;
-
-    //Change for the <button> element
     border: none;
     cursor: pointer;
   }
@@ -33,24 +30,6 @@
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
 
-  &--white {
-    background-color: $color-white;
-    color: $color-grey-dark;
-
-    &::after {
-      background-color: $color-white;
-    }
-  }
-
-  &--green {
-    background-color: $color-primary;
-    color: $color-white;
-
-    &::after {
-      background-color: $color-primary;
-    }
-  }
-
   &::after {
     content: "";
     display: inline-block;
@@ -63,10 +42,25 @@
     z-index: -1;
     transition: all 0.4s;
   }
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
 
+    &::after {
+      background-color: $color-white;
+    }
+  }
   &--animated {
     animation: moveInBottom 0.5s ease-out 0.75s;
     animation-fill-mode: backwards;
+  }
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
   }
 }
 
