@@ -519,11 +519,18 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s; }
+  @media only screen and (max-width: 56.25em) {
+    .popup {
+      border-spacing: 2.5rem; } }
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    .popup {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.5); } }
   .popup__content {
     position: absolute;
     top: 50%;
@@ -541,14 +548,23 @@ body {
   .popup__left {
     width: 33.333333%;
     display: table-cell; }
+    @media only screen and (max-width: 56.25em) {
+      .popup__left {
+        display: table-row; } }
   .popup__right {
     width: 66.6666667%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
+    @media only screen and (max-width: 56.25em) {
+      .popup__right {
+        display: table-row; } }
   .popup__img {
     display: block;
     width: 100%; }
+    @media only screen and (max-width: 56.25em) {
+      .popup__img:first-child {
+        display: none; } }
   .popup__text {
     font-size: 1.4rem;
     margin-bottom: 4rem;
@@ -562,6 +578,10 @@ body {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+    @media only screen and (max-width: 56.25em) {
+      .popup__text {
+        -moz-column-count: 1;
+        column-count: 1; } }
   .popup:target {
     opacity: 1;
     visibility: visible; }
@@ -741,7 +761,7 @@ body {
   position: relative;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em), (min-width: 125em) {
     .header {
       background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.6), rgba(7, 148, 66, 0.7)), url(../img/hero.jpg); } }
   @media only screen and (max-width: 37.5em) {
